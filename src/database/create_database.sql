@@ -1,4 +1,4 @@
-CREATE database development_db
+CREATE database development_db;
 
 CREATE TABLE authors (
   id serial PRIMARY KEY,

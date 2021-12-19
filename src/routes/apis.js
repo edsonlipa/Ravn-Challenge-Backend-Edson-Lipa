@@ -5,29 +5,13 @@ const salesController = require("../controllers/sales.controller.js");
 
 //routes
 router.get('/',(req,res)=>{
-    //console.log('Hello word1');
-    
-    res.json({Title:"mi primer titulo"});
+    console.log('Hello word1');
+    res.json({Message:"Hellos to this endpoind"});
 })
 
-router.get("/authors/by/birth",salesController.authorsOderByBrith);
+router.get("/get_authors_by_birth",salesController.authorsOderByBrith);
+router.get("/get_total_sales_by_author",salesController.getTotalSalesByAuthor);
+router.get("/get_top_n_performing_authors",salesController.getTopNPerformingAuthors);
 
-router.get('/performing_authors',(req,res)=>{
-    //const {count}=req.body();
-    //console.log('Hello word1');
-    console.log(req.query)
-    let count=req.query.count;
-    
-    const data= {
-        Title:"goku",
-        Duration:"1:50",
-        Starts: 5,
-        post: false,
-        count : count
-    };
-    res.json(data);
-})
-
-// router.get()
 
 module.exports =router;
