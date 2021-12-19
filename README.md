@@ -34,6 +34,16 @@ Make sure to check the following variables
     $ npm install
 ### Docker
     $ docker-compose build -t edsonlipa/node-ravn-challenge-api .
+>## Running the app
+### Local
+    # production
+    $ npm run prod
+
+    # development
+    $ npm run dev
+### Docker
+    $ docker-compose up
+
 
 >## Challenges and Solutions
 ### Part 1: SQL
@@ -124,8 +134,11 @@ Select authors.name , sum(sale_items.item_price * sale_items.quantity) as sales_
         }
 
 
-### Part 3: API Performance
 
 ### Part 4: Build Docker Container and steps to deploy
+#### Building the Docker Image:
+we can start building our docker image
+
+    $ docker build -t edsonlipa/node-ravn-challenge-api .
 
 <!-- You’ve been asked to containerize and deploy this API to GCP Kubernetes Engine. Please attach the Dockerfile and provide a written step-by-step guide on how you would build the docker image and deploy this to Kubernetes or AWS ECS. -->
