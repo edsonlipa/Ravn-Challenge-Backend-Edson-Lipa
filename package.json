@@ -1,0 +1,37 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "Part 1: SQL You’ve been asked to write some SQL queries to report on data in a typical relational database (for example, Postgres). Write statements to answer each of the following questions. See the Tables section below for CREATE statements describing the schema of each table. Please provide seed data and include instructions on seeding the database in your Readme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js",
+    "prod": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edsonlipa/Ravn-Challenge-Backend-Edson-Lipa.git"
+  },
+  "keywords": [],
+  "author": "Edson Lipa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edsonlipa/Ravn-Challenge-Backend-Edson-Lipa/issues"
+  },
+  "homepage": "https://github.com/edsonlipa/Ravn-Challenge-Backend-Edson-Lipa#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/node": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "nodemon": "^2.0.15"
+  }
+}
