@@ -3,7 +3,7 @@ const { QueryTypes } = require('sequelize');
 const Author = db.authors;
 
 
-exports.authorsOderByBrith = (req,res) => {
+exports.OderAuthorsByBrith = (req,res) => {
 
     const limit = req.query.count ? req.query.count : 10;
 
@@ -15,8 +15,8 @@ exports.authorsOderByBrith = (req,res) => {
         limit: limit
     })
     .then(data => {
-        let statusCode = data ? 200 : 404  ;
-        let message = data ? "OK" : "Error on apis@authorsOderByBrith";
+        let statusCode = data ? 200 : 404;
+        let message = data ? "OK" : "No data Found";
         res.status(statusCode).send({
             status: statusCode,
             message: message,
@@ -38,7 +38,7 @@ exports.getTotalSalesByAuthor = (req, res) => {
     if(!name){
         res.status(400).send({
             status: 400,
-            message: "You must specify the \"name\" parameter"
+            message: 'You must specify the "name" parameter'
         });
     }
     
@@ -52,8 +52,8 @@ exports.getTotalSalesByAuthor = (req, res) => {
             type: QueryTypes.SELECT
         }
     ).then(data => {
-        let statusCode = data ? 200 : 404  ;
-        let message = data ? "OK" : "Error on apis@getTotalSalesByAuthor";
+        let statusCode = data ? 200 : 404;
+        let message = data ? "OK" : "No data Found";
         res.status(statusCode).send({
             status: statusCode,
             message: message,
@@ -83,8 +83,8 @@ exports.getTopNPerformingAuthors = (req,res) => {
             type: QueryTypes.SELECT
         }
     ).then(data => {
-        let statusCode = data ? 200 : 404  ;
-        let message = data ? "OK" : "Error on apis@getTopNPerformingAuthors";
+        let statusCode = data ? 200 : 404;
+        let message = data ? "OK" : "No data Found";
         res.status(statusCode).send({
             status: statusCode,
             message: message,
