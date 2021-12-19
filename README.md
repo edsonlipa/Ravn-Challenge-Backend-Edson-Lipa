@@ -28,12 +28,12 @@ CREATE TABLE sale_items (
 1. Who are the first 10 authors ordered by date_of_birth?
     Select * from authors ORDER BY date_of_birth limit 10;
 2. What is the sales total for the author named “Lorelai Gilmore”?
-    Select authors.name , sum(sale_items.item_price *sale_items.quantity) as sales_total from sale_items 
+    Select authors.name , sum(sale_items.item_price * sale_items.quantity) as sales_total from sale_items 
         join books on sale_items.book_id=books.id 
         join authors on authors.id = books.author_id where authors.name ='Lorelai Gilmore' group by authors.name
         
 3. What are the top 10 performing authors, ranked by sales revenue?	
-    Select authors.name , sum(sale_items.item_price *sale_items.quantity) as sales_total from sale_items 
+    Select authors.name , sum(sale_items.item_price * sale_items.quantity) as sales_total from sale_items 
         join books on sale_items.book_id=books.id 
         join authors on authors.id = books.author_id 
         group by authors.name order by sales_total desc limit 10;

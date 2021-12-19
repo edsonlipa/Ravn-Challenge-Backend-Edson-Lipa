@@ -1,10 +1,7 @@
-const { DataTypes } = require("sequelize/dist");
+const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
 
-    /**
-     * Defining books table
-     */
     const Book = sequelize.define("books", {
         author_id:{
             type: DataTypes.INTEGER,

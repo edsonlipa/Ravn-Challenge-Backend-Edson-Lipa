@@ -1,5 +1,8 @@
 const {Router} = require('express');
 const router = Router();
+ 
+const salesController = require("../controllers/sales.controller.js");
+
 //routes
 router.get('/',(req,res)=>{
     //console.log('Hello word1');
@@ -7,18 +10,14 @@ router.get('/',(req,res)=>{
     res.json({Title:"mi primer titulo"});
 })
 
+router.get("/authors/by/birth",salesController.authorsOderByBrith);
+
 router.get('/performing_authors',(req,res)=>{
     //const {count}=req.body();
     //console.log('Hello word1');
     console.log(req.query)
     let count=req.query.count;
-    // if(count){
-    //     res.json(count);
-
-    // }else{
-    //     res.send("Error, Invalid request");
-    // }
-
+    
     const data= {
         Title:"goku",
         Duration:"1:50",
@@ -28,5 +27,7 @@ router.get('/performing_authors',(req,res)=>{
     };
     res.json(data);
 })
+
+// router.get()
 
 module.exports =router;

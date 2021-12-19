@@ -1,26 +1,17 @@
-const { DataTypes } = require("sequelize/dist");
+const { DataTypes } = require("sequelize");
 
+module.exports = (sequelize) => {
 
-module.exports = (sequelize)=>{
-
-    /**
-     * Defining sale_items table
-     */
-    const SaleItem = sequelize.define("sale_items", {
-        book_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'books',
-                key: 'id'
-            }
+    const Author = sequelize.define("authors",{
+        name: {
+            type: DataTypes.TEXT,
         },
-        customer_name: {
-            type: DataTypes.TEXT
+        date_of_birth: {
+            type: DataTypes.DATE
         },
-        item_price: {
-            type: DataTypes.DECIMAL(10,2)
-        }
+    },{
+        timestamps: false
     });
 
-    return SaleItem;
+    return Author;
 }
